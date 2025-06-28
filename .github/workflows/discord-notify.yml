@@ -1,0 +1,16 @@
+name: Discord Notifier
+
+on:
+  workflow_run:
+    workflows: ["Python Linter", "C# Build Check", "HTML Validator"]
+    types:
+      - completed
+
+jobs:
+  notify:
+    if: ${{ github.event.workflow_run.conclusion != 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skicka Discord-meddelande
+        run: |
+          curl -H "Content-Type: application/json" -X POST -d '{ "content": "🚨 En workflow misslyckades i repo: ${{ github.repository }}!" }' ${{ secrets.DISCORD_WEBHOOK }}

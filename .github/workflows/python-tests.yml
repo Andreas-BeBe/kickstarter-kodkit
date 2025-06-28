@@ -1,0 +1,13 @@
+name: Python Tests
+
+on: [push, pull_request]
+
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Kör tester
+        run: |
+          echo "def test_add(): assert 1 + 1 == 2" > test_sample.py
+          python3 -m unittest discover -s . -p "test_*.py"

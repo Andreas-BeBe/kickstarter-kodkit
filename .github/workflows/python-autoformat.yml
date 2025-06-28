@@ -1,0 +1,13 @@
+name: Python Autoformat (Black)
+
+on: [push, pull_request]
+
+jobs:
+  format-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installera black
+        run: |
+          pip install black
+          black --check Python/

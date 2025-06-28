@@ -1,0 +1,25 @@
+name: C# Build & Artifact
+
+on: [push, pull_request]
+
+jobs:
+  build-artifact:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installera .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Skapa projekt och bygg
+        run: |
+          mkdir output
+          dotnet new console -n KodkitApp
+          copy CSharp/Program.cs KodkitApp/Program.cs
+          cd KodkitApp
+          dotnet build -o ../output
+      - name: Ladda upp artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: csharp-app
+          path: output/
