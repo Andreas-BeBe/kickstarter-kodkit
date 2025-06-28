@@ -1,12 +1,23 @@
-name: Python Tests
+name: Python Tests (unittest + pytest)
 
 on: [push, pull_request]
 
 jobs:
   test-python:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - name: Installera Python och kör tester
+
+      - name: Installera Python, pytest och coverage
+        run: |
+          pip install pytest coverage
+
+      - name: Kör unittest
         run: |
           python3 -m unittest discover -s . -p "test_*.py"
+
+      - name: Kör pytest med coverage
+        run: |
+          coverage run -m pytest
+          coverage report
