@@ -1,4 +1,4 @@
-name: Python Tests (unittest + pytest)
+name: Python Tests + Coverage Report
 
 on: [push, pull_request]
 
@@ -9,15 +9,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Installera Python, pytest och coverage
+      - name: Installera pytest och coverage
         run: |
           pip install pytest coverage
 
-      - name: Kör unittest
-        run: |
-          python3 -m unittest discover -s . -p "test_*.py"
-
-      - name: Kör pytest med coverage
+      - name: Kör tester och samla coverage
         run: |
           coverage run -m pytest
           coverage report
+          coverage html
+
+      - name: Ladda upp HTML-rapport som artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-coverage-report
+          path: htmlcov/
