@@ -1,35 +1,23 @@
 # Andreas Kickstarter Kodkit
 
-Ett startpaket med kodexempel i flera språk. Perfekt för nybörjare eller som mall för nya projekt!
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
-## 📁 Innehåll
+Ett kodkit för att komma igång med programmering!
 
-- Python: `hello.py`
-- C#: `Program.cs`
-- JavaScript: `index.js`
-- HTML: `index.html`
+## Innehåll
 
-## 🚀 Så här använder du det
+- 📁 Python: Grundläggande exempel och tester
+- 📁 HTML_CSS: En statisk webbplats för GitHub Pages
+- 📁 CSharp: Exempelkod i C# med automatisk build och artifacts
 
-1. Klona repot:
-   ```bash
-   git clone https://github.com/ditt-användarnamn/kickstarter-kodkit.git
-   ```
+## Automatiserade GitHub Actions
 
-2. Öppna valfri mapp i Visual Studio Code eller valfri editor.
+- ✅ Syntaxkontroller (Python, JS, HTML)
+- ✅ Unittest och pytest med coverage
+- ✅ Bygg och deploy till GitHub Pages
+- ✅ Artifact builds (C# .exe)
+- ✅ Discord notifiering (om konfigurerat)
 
-3. Testa varje fil:
-   - Python: `python hello.py`
-   - C#: Öppna `Program.cs` i Visual Studio och kör
-   - JavaScript/HTML: Öppna `index.html` i webbläsare
+## License
 
-## 🛠️ Rekommenderade verktyg
-
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Python](https://www.python.org/)
-- [Visual Studio](https://visualstudio.microsoft.com/)
-- En modern webbläsare (Chrome, Firefox, Edge)
-
-## 📝 Licens
-
-MIT – använd fritt, dela gärna med andra!
+MIT
