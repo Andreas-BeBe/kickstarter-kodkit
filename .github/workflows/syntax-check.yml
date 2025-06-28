@@ -1,0 +1,23 @@
+name: Andreas Kodkit – Syntax Check
+
+on: [push, pull_request]
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Klona repot
+      uses: actions/checkout@v3
+
+    - name: Installera Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Kontrollera Python-syntax
+      run: python -m py_compile Python/hello.py
+
+    - name: Kontrollera JavaScript-syntax
+      run: |
+        echo "console.log('Testar JavaScript-syntax');" > temp_test.js
+        node temp_test.js
