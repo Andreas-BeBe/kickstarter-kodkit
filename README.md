@@ -26,4 +26,4 @@ Detta projekt innehåller exempel i flera språk samt CI/CD-workflows via GitHub
 
 ---
 
-🛡️ *Powered by DGEMode – Ruler over the Servers, Defender of the Code & Guardian of the Realms.*
+🛡️ *Powered by THE Ruler over the Servers, Defender of the Code & Guardian of the Realms.*
