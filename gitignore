@@ -1,0 +1,39 @@
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.log
+*.pdb
+*.obj
+*.exe
+*.dll
+*.vcxproj.*
+*.csproj.user
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+*.env
+*.sqlite3
+
+# Node.js / JavaScript
+node_modules/
+npm-debug.log
+dist/
+build/
+
+# macOS och Windows
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Other
+*.zip
