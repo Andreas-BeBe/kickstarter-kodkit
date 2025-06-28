@@ -1,0 +1,17 @@
+name: README Kontroll
+
+on: [push, pull_request]
+
+jobs:
+  check-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Kontrollera att README.md innehåller en rubrik
+        run: |
+          if grep -q "^# " README.md; then
+            echo "README innehåller en rubrik"
+          else
+            echo "::error ::README saknar en huvudrubrik"
+            exit 1
+          fi
